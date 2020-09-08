@@ -9,7 +9,7 @@ $conteo = ['Primero', 'Segundo','Tercero'];
 $personas = array (
     'nombre' => 'Jesus',
     'apellidos' => 'Posada',
-    'email' => 'posesco@gmail.com',
+    'web' => 'posesco.com',
 );
 // Array multidimensional
 $contactos = array(
@@ -18,20 +18,21 @@ $contactos = array(
         'email' => 'elliot@yopmail.com'
     ),
     array(
-        'nombre' => 'Elliot Posada',
-        'email' => 'elliot@yopmail.com'
+        'nombre' => 'Jesus Posada',
+        'email' => 'posesco@yopmail.com'
         
     ),
     array(
-        'nombre' => 'Elliot Posada',
-        'email' => 'elliot@yopmail.com'
+        'nombre' => 'Matilde Escobar',
+        'email' => 'materita@yopmail.com'
 
     ),
 );
-
-echo $personas['email'].'<br>';
+// Impresion sencilla de array
 echo $peliculas[0].'<br>';
 echo $conteo[2].'<br>';
+echo $personas['web'].'<br>';
+echo $contactos[0]['email'].'<br>';
 // Calcular tamaño de array
 $largo = sizeof($peliculas);
 count($peliculas);
@@ -44,5 +45,10 @@ for ($i=0; $i < $largo ; $i++) {
 echo '<hr>';
 foreach ($conteo as $value) {
     echo "La posicion es # $value".'<br>';
+}
+echo '<hr>';
+foreach ($contactos as $llave => $contacto) {
+    echo $contacto['nombre'].'<br>';
+    echo $contacto['email'].'<br>';
 }
 ?>
