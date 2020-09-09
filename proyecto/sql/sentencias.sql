@@ -43,9 +43,15 @@ INSERT INTO usuarios (nombre, apellido, email, pass)
          ('George Raymond', 'Richard Martin', 'grgm@yopmail.com', SHA('clavesegura8'));
 
 INSERT INTO categorias(nombre)
-  VALUES ('administrador'),
-         ('supervisor'),
-         ('cliente');
+  VALUES ('Accion'),
+         ('Roll'),
+         ('Deportes');
 
 INSERT INTO entradas(usuario_id, categorias_id, titulo, descripcion)
-  VALUES (1, 2,'Este es mi primer post', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+  VALUES (1, 2,'Mi primer juego de Roll', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (3, 2,'Review LOL Online', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (7, 1,'Mortal Kombat todo lo que debes saber', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (5, 1,'Fortnite', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (5, 1,'Este es mi primer post', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (4, 2,'Jugue WOW y pailas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
+         (2, 3,'Este es mi primer post', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, dolor sed vehicula bibendum, mauris ligula rutrum mi, eu' );
