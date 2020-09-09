@@ -8,11 +8,10 @@ services:
     hostname: php.local
     build:
       context: ./server/php
-#    expose:
-#      - 9000:9000
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./server/php/ini:/usr/local/etc/php/
     env_file: .env
     restart: unless-stopped
     networks: 
@@ -39,8 +38,6 @@ services:
     hostname: basedatos.local
     depends_on: 
       - php
-#    expose: 
-#        - 3306:3306
     volumes: 
         - ./server/mariadb/db:/var/lib/mysql 
     env_file: .env

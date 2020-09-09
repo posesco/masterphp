@@ -10,9 +10,9 @@
     <h1>Mi segunda web</h1>
     <!-- Menu -->
     <ul>
-        <li><a href="index.html" title="Inicio">Inicio</a></li>
-        <li><a href="contenidos.html" title="Contenidos">Contenido</a></li>
-        <li><a href="contacto.html" title="Contacto">Contacto</a> </li>
+        <li><a href="index.php" title="Inicio">Inicio</a></li>
+        <li><a href="contenidos.php" title="Contenidos">Contenido</a></li>
+        <li><a href="contacto.php" title="Contacto">Contacto</a> </li>
         <li><a href="https://www.google.com" title="Google" target="_blank">Google.com</a></li>
     </ul>
     <hr/>
