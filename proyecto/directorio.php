@@ -1,5 +1,5 @@
 <?php
-echo '<h2>Menu general del Curso Master php</h2>';
+echo '<h2>Menu SQL del Curso Master php</h2>';
 $arreglo = [];
 // Lista todos los archivos del directorio
 if ($gestor = opendir('./')) {

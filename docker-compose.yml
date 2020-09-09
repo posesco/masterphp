@@ -12,7 +12,7 @@ services:
       - ./proyecto:/srv/www/api
       - ./server/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./server/php/ini:/usr/local/etc/php/
-    env_file: .env
+    env_file: ./server/.env
     restart: unless-stopped
     networks: 
       - net
@@ -36,11 +36,29 @@ services:
     container_name: BASE_DATOS
     image: mariadb:latest
     hostname: basedatos.local
+    ports:
+      - 3306:3306
     depends_on: 
       - php
     volumes: 
         - ./server/mariadb/db:/var/lib/mysql 
-    env_file: .env
+    env_file: ./server/.env
+    restart: unless-stopped
+    networks: 
+        - net 
+  # Gestor visual de Base de Datos SOLO POR EL CURSO
+  phpmyadmin:
+    container_name: GESTOR_BASE_DATOS
+    image: phpmyadmin/phpmyadmin
+    hostname: phpmyadmin.local
+    ports:
+      - 8080:80
+    depends_on: 
+      - db
+    volumes: 
+        - ./php/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+        - ./php/phpmyadmin/sessions/:/sessions/
+    env_file: ./server/.env
     restart: unless-stopped
     networks: 
         - net 
