@@ -4,7 +4,7 @@ $arreglo = [];
 // Lista todos los archivos del directorio
 if ($gestor = opendir('./')) {
     while (false !== ($entrada = readdir($gestor))) {
-        if ($entrada != "." && $entrada != "..") {
+        if ($entrada != "." && $entrada != ".." && $entrada != "directorio.php" && $entrada != "index.php") {
           $arreglo [] = $entrada;
         }
     }
