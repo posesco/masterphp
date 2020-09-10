@@ -65,8 +65,8 @@ services:
     container_name: NGINX_1
     image: nginx:alpine
     hostname: web.local
-    ports:
-      - 81:80
+#    ports:
+#      - 81:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -80,8 +80,8 @@ services:
     container_name: NGINX_2
     image: nginx:alpine
     hostname: web.local
-    ports:
-      - 82:80
+#    ports:
+#      - 82:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -95,8 +95,8 @@ services:
     container_name: NGINX_3
     image: nginx:alpine
     hostname: web.local
-    ports:
-      - 83:80
+#    ports:
+#      - 83:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf

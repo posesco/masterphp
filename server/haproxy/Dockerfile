@@ -9,4 +9,4 @@ RUN adduser \
     --no-create-home \
     --uid "$UID" \
     "$USER"
-RUN mkdir /var/lib/haproxy/
+RUN mkdir /var/lib/haproxy /dev/log
