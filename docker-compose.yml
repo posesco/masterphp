@@ -44,7 +44,7 @@ services:
     restart: unless-stopped
     networks: 
         - net 
-#### <<< Multiples Server Web para Load Balance con Haproxy >>>>>>>        
+#### <<< Multiples Server Web con Balanceo de cargar -- Haproxy >>>>>>>        
   # Contenedor Haproxy
   haproxy: 
     container_name: BALANCEADOR
@@ -57,7 +57,7 @@ services:
       - nginx1
       - nginx2
       - nginx3
-#    restart: unless-stopped
+    restart: unless-stopped
     networks:
       - net
   #  Grupo de contenedores replicas de Servidor Web
@@ -65,8 +65,6 @@ services:
     container_name: NGINX_1
     image: nginx:alpine
     hostname: web.local
-#    ports:
-#      - 81:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -80,8 +78,6 @@ services:
     container_name: NGINX_2
     image: nginx:alpine
     hostname: web.local
-#    ports:
-#      - 82:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf
@@ -95,8 +91,6 @@ services:
     container_name: NGINX_3
     image: nginx:alpine
     hostname: web.local
-#    ports:
-#      - 83:80
     volumes:
       - ./proyecto:/srv/www/api
       - ./server/nginx/default.conf:/etc/nginx/conf.d/default.conf
