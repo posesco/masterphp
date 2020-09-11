@@ -7,7 +7,7 @@ definer_user=root
 definer_host=localhost
 suid=2
 with_check_option=0
-timestamp=2020-09-10 20:37:00
+timestamp=2020-09-11 16:17:39
 create-version=2
 source=SELECT e.id, e.titulo, u.nombre AS \'Autor\', c.nombre AS \'Categoria\' FROM entradas e\n    INNER JOIN usuarios u ON e.usuario_id = u.id\n    INNER JOIN categorias c ON e.categorias_id = c.id\n    ORDER BY e.id
 client_cs_name=latin1
