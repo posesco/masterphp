@@ -7,7 +7,7 @@ definer_user=root
 definer_host=localhost
 suid=2
 with_check_option=0
-timestamp=2020-09-11 16:03:28
+timestamp=2020-09-11 20:05:50
 create-version=2
 source=SELECT * FROM vendedores WHERE grupo_id IN \n    (SELECT id FROM grupos WHERE nombre="Vendedores A")
 client_cs_name=latin1
