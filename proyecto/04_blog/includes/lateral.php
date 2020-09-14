@@ -1,16 +1,21 @@
 <?php require_once 'helpers.php';?>
 <!-- SIDEBAR >> BARRA LATERAL -->
 <aside id="sidebar">
+                <!-- INICIO - LOGIN -->
                 <div id="login" class="bloque">
                     <h3>Identificate</h3>
                     <form action="login.php" method="POST">
-                        <label for="mail">Email</label>
-                        <input type="email" name="mail" id="" >
-                        <label for="pass">Contraseña</label>
-                        <input type="password" name="pass" id="" >
+                        <label for="correo">Email</label>
+                        <input type="email" name="correo" id="" >
+                        <!-- Se hace una comprobacion ternaria para evitar errores en caso de sesion terminada -->
+                        <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'correo'): '';?>
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="" >
                         <input type="submit" value="Entrar">
                     </form>
                 </div>
+                <!-- FIN - LOGIN -->
+                <!-- INICIO - REGISTRO DE USUARIOS -->
                 <div id="register" class="bloque">
                     <h3>Registrate</h3>
                     <!-- Muestra error de registro -->
@@ -26,7 +31,6 @@
                     <form action="registro.php" method="POST">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" id="" >
-                        <!-- Se hace una comprobacion ternaria para evitar errores en caso de sesion terminada -->
                         <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'nombre'): '';?>
                         
                         <label for="apellidos">Apellidos</label>
@@ -46,4 +50,6 @@
                     <?php borrarErrores();?>
 
                 </div>
+                <!-- FIN - REGISTRO DE USUARIOS -->
+
             </aside>

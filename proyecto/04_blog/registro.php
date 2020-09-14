@@ -11,7 +11,8 @@ if (isset($_POST)) {
     // Esto genera un nivel de seguridad ya que evita que se ejecuten consultas no deseadas 
     $nombre     = isset ($_POST['nombre']) ? mysqli_real_escape_string ($db, $_POST['nombre']) : false ;
     $apellidos  = isset ($_POST['apellidos']) ? mysqli_real_escape_string ($db, $_POST['apellidos']) : false ;
-    $correo     = isset ($_POST['correo']) ? mysqli_real_escape_string ($db, $_POST['correo']) : false ;
+    // Funcion trim para no permitir espacios 
+    $correo     = isset ($_POST['correo']) ? mysqli_real_escape_string ($db, trim($_POST['correo'])) : false ;
     $password   = isset ($_POST['password']) ? mysqli_real_escape_string ($db, $_POST['password']) : false ;
     // Array de errores
     $errores = [];
