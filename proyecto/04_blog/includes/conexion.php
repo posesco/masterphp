@@ -10,4 +10,7 @@ if (!$db) {
     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
+// Incluye la session
+// Se crea sesion para evitar enviar parametros GET y verificar los datos de registro
+session_start();
 ?>

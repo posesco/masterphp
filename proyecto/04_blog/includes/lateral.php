@@ -1,3 +1,4 @@
+<?php require_once 'helpers.php';?>
 <!-- SIDEBAR >> BARRA LATERAL -->
 <aside id="sidebar">
                 <div id="login" class="bloque">
@@ -12,16 +13,30 @@
                 </div>
                 <div id="register" class="bloque">
                     <h3>Registrate</h3>
-                    <form action="register.php" method="POST">
+                    <!-- Muestra error de registro -->
+                    <?php if(isset($_SESSION['errores'])):?>
+                        <?php echo "<div class='alerta alerta-error'> Error de registro </div>"; ?>
+                    <?php endif; ?>
+                    <form action="registro.php" method="POST">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" id="" >
+                        <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'nombre'): '';?>
+                        
                         <label for="apellidos">Apellidos</label>
-                        <input type="email" name="apellidos" id="" >
+                        <input type="text" name="apellidos" id="" >
+                        <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'apellidos'): '';?>
+                        
                         <label for="correo">Email</label>
                         <input type="email" name="correo" id="" >
+                        <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'correo'): '';?>
+                        
                         <label for="password">Contraseña</label>
                         <input type="password" name="password" id="" >
-                        <input type="submit" value="Registrar">
+                        <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'password'): '';?>
+                        
+                        <input type="submit" name="submit" value="Registrar">
                     </form>
+                    <?php borrarErrores();?>
+
                 </div>
             </aside>
