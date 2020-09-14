@@ -10,8 +10,15 @@ function mostrarError($errores, $campo){
 }
 // Limpia la variable errores para permitir el ingreso de nuevos datos
 function borrarErrores(){
-    $_SESSION['errores'] = null;
-    $borrado = session_unset($_SESSION['errores']); 
+    $borrado = false;
+    if(isset($_SESSION['errores'])){
+        $_SESSION['errores'] = null;
+        $borrado = session_unset($_SESSION['errores']); 
+    }
+    if(isset($_SESSION['completado'])){
+        $_SESSION['completado'] = null;
+        $borrado = session_unset($_SESSION['completado']); 
+    }
     return $borrado;
 }
 

@@ -1,11 +1,18 @@
 <?php
-session_start();
 if (isset($_POST)) {
+    // Cargar conexion a DB
+    require_once 'includes/conexion.php';
+    // Inicio de Sesion
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     //Operador ternario verifica si recibe parametros si no da el valor false
-    $nombre     = isset ($_POST['nombre']) ? $_POST['nombre'] : false ;
-    $apellidos  = isset ($_POST['apellidos']) ? $_POST['apellidos'] : false ;
-    $correo     = isset ($_POST['correo']) ? $_POST['correo'] : false ;
-    $password   = isset ($_POST['password']) ? $_POST['password'] : false ;
+    // la funcion mysqli_real_escape_string hace que tome los caracteres especiales como string para evitar errores en la consula SQL
+    // Esto genera un nivel de seguridad ya que evita que se ejecuten consultas no deseadas 
+    $nombre     = isset ($_POST['nombre']) ? mysqli_real_escape_string ($db, $_POST['nombre']) : false ;
+    $apellidos  = isset ($_POST['apellidos']) ? mysqli_real_escape_string ($db, $_POST['apellidos']) : false ;
+    $correo     = isset ($_POST['correo']) ? mysqli_real_escape_string ($db, $_POST['correo']) : false ;
+    $password   = isset ($_POST['password']) ? mysqli_real_escape_string ($db, $_POST['password']) : false ;
     // Array de errores
     $errores = [];
     // Verificacion de datos antes de enviar a la base de datos
@@ -36,16 +43,22 @@ if (isset($_POST)) {
     // Se verifica si existio alguno error almacenado en el array errores
     $guardar_usuario = false;
     if (count($errores) == 0 ) {
-        // Insertamos datos en base de datos
         $guardar_usuario = true;
-        // $sql = "INSERT INTO usuarios(nombre, apellido, email, pass)
-        //         VALUES ($nombre,$apellidos,$correo,SHA($password))";
-        // $query = mysqli_query($db, $sql);
+        // Insertamos datos en base de datos
+        // Cifrado de password seguro con 4 niveles TENER ENCUENTA EL TAMA;O DEL CAMPO PASSWORD EN LA TABLA
+        $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+        $sql = "INSERT INTO usuarios(nombre, apellido, email, pass) VALUES ('$nombre','$apellidos','$correo','$password_segura')";
+        $guardar = mysqli_query($db, $sql);
+        if ($guardar) {
+            $_SESSION['completado'] = 'Registro existoso!';
+        }else {
+            $_SESSION['errores']['general'] = 'Fallo al guardar';
+        }
     }else {
         // Devolvemos al formulario para corregir los datos 
         $_SESSION['errores'] = $errores;
-        header('Location:index.php');
     }
 }
+header('Location:index.php');
 
 ?>
