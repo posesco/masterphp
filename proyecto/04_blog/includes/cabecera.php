@@ -35,10 +35,10 @@ require_once 'helpers.php';
                 </li>
                 <?php endwhile; ?>
                 <li>
-                    <a href="aboutme.php">Sobre mi</a>
+                    <a href="sobremi.php">Sobre mi</a>
                 </li>
                 <li>
-                    <a href="contact.php">Contactos</a>
+                    <a href="contacto.php">Contactos</a>
                 </li>
             </ul>
         </nav>

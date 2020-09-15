@@ -4,8 +4,8 @@
                 <?php if(isset($_SESSION['usuario'])): ?>
                     <div class="bloque">
                         <h3><?='Hola! '.$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
-                        <a href='entradas.php'class='boton boton-verde'>Crear Entradas</a>
-                        <a href='categorias.php'class='boton boton'>Crear Categoria</a>
+                        <a href='crear_entradas.php'class='boton boton-verde'>Crear Entradas</a>
+                        <a href='crear_categorias.php'class='boton boton'>Crear Categoria</a>
                         <a href='misdatos.php'class='boton boton-naranja'>Mis Datos</a>
                         <a href='cerrar.php'class='boton boton-rojo'>Logout</a>
                     </div>

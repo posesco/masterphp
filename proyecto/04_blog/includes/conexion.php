@@ -12,5 +12,7 @@ if (!$db) {
 }
 // Incluye la session
 // Se crea sesion para evitar enviar parametros GET y verificar los datos de registro
-session_start();
+if (!isset($_SESSION)){
+    session_start();
+}
 ?>
