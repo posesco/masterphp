@@ -33,14 +33,14 @@ CREATE TABLE IF NOT EXISTS entradas (
 # Insercion de Datos
 
 INSERT INTO usuarios (nombre, apellido, email, pass)
-  VALUES ('Stephen Edwin', 'King', 'sek@yopmail.com', SHA('clavesegura1')),
-         ('Joanne', 'Rowling', 'jr@yopmail.com', SHA('clavesegura2')),
-         ('Daniel', 'Brown', 'db@yopmail.com', SHA('clavesegura3')),
-         ('John', 'Katzenbach ', 'jk@yopmail.com', SHA('clavesegura4')),
-         ('John Ronald', 'Reuel Tolkien', 'jrrt@yopmail.com', SHA('clavesegura5')),
-         ('Miguel', 'de Unamuno', 'mdu@yopmail.com', SHA('clavesegura6')),
-         ('Arturo', 'Pérez Reverte', 'apr@yopmail.com', SHA('clavesegura7')),
-         ('George Raymond', 'Richard Martin', 'grgm@yopmail.com', SHA('clavesegura8'));
+  VALUES ('Stephen Edwin', 'King', 'sek@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('Joanne', 'Rowling', 'jr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('Daniel', 'Brown', 'db@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('John', 'Katzenbach ', 'jk@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('John Ronald', 'Reuel Tolkien', 'jrrt@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('Miguel', 'de Unamuno', 'mdu@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('Arturo', 'Pérez Reverte', 'apr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
+         ('George Raymond', 'Richard Martin', 'grgm@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'));
 
 INSERT INTO categorias(nombre)
   VALUES ('Accion'),
