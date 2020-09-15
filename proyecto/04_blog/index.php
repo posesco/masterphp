@@ -1,41 +1,27 @@
-<?php require_once 'includes/cabecera.php';?>
-<?php require_once 'includes/lateral.php';?>
+<?php 
+require_once 'includes/cabecera.php';
+require_once 'includes/lateral.php';
+?>
 </div>
 <!--  CAJA PRINCIPAL -->
 <div id="principal">
     <h1>Ultimas entradas</h1>
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur 
-            maiores, quibusdam error, assumenda id nisi repellat cupiditate ratione modi quo vitae delectus asperiores esse? Iure sunt tempore hic ex necessitatibus.
-            </p>
-        </a>
-    </article>
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur 
-            maiores, quibusdam error, assumenda id nisi repellat cupiditate ratione modi quo vitae delectus asperiores esse? Iure sunt tempore hic ex necessitatibus.
-            </p>
-        </a>
-    </article>
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur 
-            maiores, quibusdam error, assumenda id nisi repellat cupiditate ratione modi quo vitae delectus asperiores esse? Iure sunt tempore hic ex necessitatibus.
-            </p>
-        </a>
-    </article>
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur 
-            maiores, quibusdam error, assumenda id nisi repellat cupiditate ratione modi quo vitae delectus asperiores esse? Iure sunt tempore hic ex necessitatibus.
-            </p>
-        </a>
-    </article>
+    <?php 
+        // el parametro db viene de conexion.php
+        $entradas = conseguirUltimasEntradas($db);
+        if (!empty($entradas)):
+            while($entrada = mysqli_fetch_assoc($entradas)):
+        ?>
+                <article class="entrada">
+                    <a href="entrada.php?id<?=$entrada['id']?>">
+                        <h2><?=$entrada['titulo']?></h2>
+                        <p><?=$entrada['descripcion']?></p>
+                    </a>
+                </article>
+    <?php 
+            endwhile;
+        endif;    
+    ?>
     <div id="ver-todas">
         <a href="">Ver todas las entradas</a>
     </div> <!--  fin principal -->

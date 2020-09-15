@@ -1,13 +1,13 @@
-<?php require_once 'helpers.php';?>
 <!-- SIDEBAR >> BARRA LATERAL -->
 <aside id="sidebar">
                 <!-- Comprobacion de sesion abierta -->
                 <?php if(isset($_SESSION['usuario'])): ?>
                     <div class="bloque">
                         <h3><?='Hola! '.$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellido']; ?></h3>
-                        <a href='cerrar.php'class='boton'>Crear Entradas</a>
-                        <a href='cerrar.php'class='boton boton-naranja'>Mis Datos</a>
-                        <a href='cerrar.php'class='boton boton-verde'>Logout</a>
+                        <a href='entradas.php'class='boton boton-verde'>Crear Entradas</a>
+                        <a href='categorias.php'class='boton boton'>Crear Categoria</a>
+                        <a href='misdatos.php'class='boton boton-naranja'>Mis Datos</a>
+                        <a href='cerrar.php'class='boton boton-rojo'>Logout</a>
                     </div>
                 <?php endif; ?>
                 <!-- Esto oculta los formularios si es que exite un sesion abierta         -->

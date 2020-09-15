@@ -45,6 +45,7 @@ INSERT INTO usuarios (nombre, apellido, email, pass)
 INSERT INTO categorias(nombre)
   VALUES ('Accion'),
          ('Roll'),
+         ('Plataformas'),
          ('Deportes');
 
 INSERT INTO entradas(usuario_id, categorias_id, titulo, descripcion)

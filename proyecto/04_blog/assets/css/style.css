@@ -201,8 +201,8 @@ input[type="submit"],
 
 /*PRINCIPAL*/
 #principal{
-    float: left;
-    width: 63%;
+    float: right;
+    width: 60%;
     min-height: auto;
     background:white;
     border-radius: 5px;

@@ -1,4 +1,7 @@
-<?php require_once 'conexion.php';?>
+<?php 
+require_once 'conexion.php';
+require_once 'helpers.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +16,7 @@
             <!-- LOGO -->
             <div id='logo'>
                 <a href="index.php">
-                    Blog de Tecnologia
+                    Blog de Video Juegos
                 </a>
             </div>
         <!-- MENU -->
@@ -22,18 +25,15 @@
                 <li>
                     <a href="index.php">Inicio</a>
                 </li>
+                <?php 
+                    // el parametro db viene de conexion.php
+                    $categorias = conseguirCategorias($db);
+                    while($categoria = mysqli_fetch_assoc($categorias)):
+                ?>
                 <li>
-                    <a href="index.php">Categoria 1</a>
+                    <a href="categoria.php?id<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
                 </li>
-                <li>
-                    <a href="index.php">Categoria 2</a>
-                </li>
-                <li>
-                    <a href="index.php">Categoria 3</a>
-                </li>
-                <li>
-                    <a href="index.php">Categoria 4</a>
-                </li>
+                <?php endwhile; ?>
                 <li>
                     <a href="aboutme.php">Sobre mi</a>
                 </li>
