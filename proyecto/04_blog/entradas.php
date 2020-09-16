@@ -5,10 +5,10 @@ require_once 'includes/lateral.php';
 </div>
 <!--  CAJA PRINCIPAL -->
 <div id="principal">
-    <h1>Ultimas entradas</h1>
+    <h1>Todas las entradas</h1>
     <?php 
         // el parametro db viene de conexion.php
-        $entradas = conseguirEntradas($db, true);
+        $entradas = conseguirEntradas($db);
         if (!empty($entradas)):
             while($entrada = mysqli_fetch_assoc($entradas)):
         ?>
@@ -21,7 +21,5 @@ require_once 'includes/lateral.php';
             endwhile;
         endif;    
     ?>
-    <div id="ver-todas">
-        <a href="entradas.php">Ver todas las entradas</a>
     </div> <!--  fin principal -->
 <?php require_once 'includes/pie.php';?>

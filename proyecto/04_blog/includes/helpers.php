@@ -32,11 +32,15 @@ function conseguirCategorias($conexion){
     return $result;
 }
 // Listar entradas
-function conseguirUltimasEntradas($conexion){
+function conseguirEntradas($conexion, $limit = null){
     $sql = "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre,' ',u.apellido) AS 'autor' FROM entradas e 
             INNER JOIN categorias c ON e.categorias_id = c.id 
             INNER JOIN usuarios u ON e.usuario_id = u.id 
-            ORDER BY e.id DESC LIMIT 4";
+            ORDER BY e.id DESC";
+    if($limit){
+        // Concatenamiento para un limite de 4 entradas
+        $sql .= " LIMIT 4";
+    }
     $entradas = mysqli_query($conexion, $sql); 
     $resultado= array();
     if ($entradas && mysqli_num_rows($entradas) >=1 ) {
