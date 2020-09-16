@@ -10,19 +10,25 @@ require_once 'includes/lateral.php';
     </p>
     <br>
    <!-- Muestra error de registro -->
-    <?php if(isset($_SESSION['nueva_categoria'])):?>
-        <div class='alerta alerta-exito'> 
-            <?=$_SESSION['nueva_categoria'] ?> 
-        </div>
-        <?php elseif(isset($_SESSION['errores']['general'])): ?>
-            <div class='alerta alerta-error'> 
-                <?=$_SESSION['errores']['general'] ?> 
-            </div>
-    <?php endif; ?>
     <form action="guardar_categorias.php" method="POST">
         <label for="nombre">Nombre de nueva Categoria</label>
+        <br>
         <input type="text" name="nombre">
         <input type="submit" value="Guardar" >
     </form>
+    <?php if(isset($_SESSION['error'])):?>
+        <div class='alerta alerta-error'> 
+            <?=$_SESSION['error'] ?> 
+        </div>
+    <?php endif; ?>
+    <?php if(isset($_SESSION['exito'])): ?>
+        <div class='alerta alerta-exito'> 
+            <?=$_SESSION['exito']; ?> 
+        </div>
+    <?php endif; ?>
+    <?php 
+    unset($_SESSION['error']);
+    unset($_SESSION['exito']);
+    ?>
 </div> <!--  fin principal -->
 <?php require_once 'includes/pie.php';?>

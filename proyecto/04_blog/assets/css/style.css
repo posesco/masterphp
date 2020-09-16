@@ -156,6 +156,12 @@ input[type="password"]{
     margin-bottom: 2px;
 }
 
+textarea {
+     width: 95%;
+     padding: 5px;
+     margin-bottom: 10px;
+  }
+
 input[type="text"],
 input[type="email"],
 input[type="password"]{
