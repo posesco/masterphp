@@ -27,6 +27,7 @@ require_once 'includes/lateral.php';
         <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'categoria'): '';?>
         <label for="categoria">Escoge tu categoria</label>
         <select name="categoria">
+            <option value=""></option>
             <?php 
         // el parametro db viene de conexion.php
         $categorias = conseguirCategorias($db);
