@@ -1,1 +1,3 @@
 **/.DS_Store
+server/mariadb/db/ib_logfile0
+server/mariadb/db/ibtmp1
