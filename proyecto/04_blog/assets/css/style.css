@@ -245,6 +245,10 @@ input[type="submit"],
     margin-top: 25px;
 }
 
+#principal ul {
+    list-style-type: none;
+  }
+
 #principal p{
     margin-top: 8px;
 }

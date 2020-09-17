@@ -4,7 +4,7 @@ require_once 'includes/conexion.php';
 require_once 'includes/helpers.php'; 
 ?>
 <?php
-	$entrada_actual = conseguirEntrada($db, $_GET['id']);
+	$entrada_actual = conseguirEntrada($db, $_GET['id'], null);
 
 	if(!isset($entrada_actual['id'])){
 		header("Location: index.php");
