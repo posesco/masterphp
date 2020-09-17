@@ -20,9 +20,17 @@ if (isset($_POST)) {
         $errores['descripcion'] = 'La entrada no puede estar vacia';
     }
     if (count($errores) == 0 ) {
-        // Insertamos datos en base de datos
         $id = $_SESSION['usuario']['id'];
-        $sql = "INSERT INTO entradas (usuario_id, categorias_id, titulo, descripcion) VALUES ('$id', '$categoria', '$titulo', '$descripcion');";
+		if(isset($_GET['editar'])){
+			$entrada_id = $_GET['editar'];
+			$sql = "UPDATE entradas SET titulo='$titulo', descripcion='$descripcion', categoria_id=$categoria
+                    WHERE id = $entrada_id AND usuario_id = $id";
+
+		}else{
+            // Insertamos datos en base de datos
+            $sql = "INSERT INTO entradas (usuario_id, categorias_id, titulo, descripcion) VALUES ('$id', '$categoria', '$titulo', '$descripcion');";
+		}
+    
         $entrada = mysqli_query($db, $sql);
         if ($entrada) {
             $_SESSION['completado'] = "Se creo la nueva entrada de titulo: $titulo";

@@ -19,7 +19,7 @@ require_once 'includes/helpers.php';
 		Edita tu entrada: <strong>"<?=$entrada_actual['titulo']?>"</strong>
 	</p>
 	<br/>
-	<form action="guardar-entrada.php?editar=<?=$entrada_actual['id']?>" method="POST">
+	<form action="guardar_entradas.php?editar=<?=$entrada_actual['id']?>" method="POST">
 		<label for="titulo">Titulo:</label>
 		<input type="text" name="titulo" value="<?=$entrada_actual['titulo']?>"/>
 		<?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'titulo') : ''; ?>

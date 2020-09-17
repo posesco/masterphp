@@ -33,14 +33,14 @@ CREATE TABLE IF NOT EXISTS entradas (
 # Insercion de Datos
 
 INSERT INTO usuarios (nombre, apellido, email, pass)
-  VALUES ('Stephen Edwin', 'King', 'sek@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('Joanne', 'Rowling', 'jr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('Daniel', 'Brown', 'db@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('John', 'Katzenbach ', 'jk@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('John Ronald', 'Reuel Tolkien', 'jrrt@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('Miguel', 'de Unamuno', 'mdu@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('Arturo', 'Pérez Reverte', 'apr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq')),
-         ('George Raymond', 'Richard Martin', 'grgm@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'));
+  VALUES ('Stephen Edwin', 'King', 'sek@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('Joanne', 'Rowling', 'jr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('Daniel', 'Brown', 'db@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('John', 'Katzenbach ', 'jk@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('John Ronald', 'Reuel Tolkien', 'jrrt@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('Miguel', 'de Unamuno', 'mdu@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('Arturo', 'Pérez Reverte', 'apr@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq'),
+         ('George Raymond', 'Richard Martin', 'grgm@yopmail.com', '$2y$04$LqBNGAmGDu4zvMLxQ8fLZOiJlFPB9j2LMg0wlgdZUz8Izd2a6aokq');
 
 INSERT INTO categorias(nombre)
   VALUES ('Accion'),

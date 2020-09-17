@@ -18,16 +18,16 @@ require_once 'includes/lateral.php';
         <?php endif; ?>
         <form action="actulizar_usuario.php" method="POST">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="" >
+            <input type="text" name="nombre" id="" value="<?=$_SESSION['usuario']['nombre']?>">
             <!-- Se hace una comprobacion ternaria para evitar errores en caso de sesion terminada -->
             <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'nombre'): '';?>
             
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="" >
+            <input type="text" name="apellidos" id="" value="<?=$_SESSION['usuario']['apellido']?>">
             <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'apellidos'): '';?>
             
             <label for="correo">Email</label>
-            <input type="email" name="correo" id="" >
+            <input type="email" name="correo" id="" value="<?=$_SESSION['usuario']['email']?>">
             <?php echo isset($_SESSION['errores']) ? mostrarError($_SESSION['errores'], 'correo'): '';?>
             
             <input type="submit" name="submit" value="Actualizar Datos">
