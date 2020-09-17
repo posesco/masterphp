@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/redireccion.php';
 require_once 'includes/conexion.php';
 
 if(isset($_SESSION['usuario']) && isset($_GET['id'])){

@@ -5,7 +5,6 @@ require_once 'includes/helpers.php';
 ?>
 <?php
 	$entrada_actual = conseguirEntrada($db, $_GET['id'], null);
-
 	if(!isset($entrada_actual['id'])){
 		header("Location: index.php");
 	}
@@ -17,7 +16,7 @@ require_once 'includes/helpers.php';
 <div id="principal">
 	<h1>Editar entrada</h1>
 	<p>
-		Edita tu entrada <?=$entrada_actual['titulo']?>
+		Edita tu entrada: <strong>"<?=$entrada_actual['titulo']?>"</strong>
 	</p>
 	<br/>
 	<form action="guardar-entrada.php?editar=<?=$entrada_actual['id']?>" method="POST">
@@ -26,7 +25,7 @@ require_once 'includes/helpers.php';
 		<?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'titulo') : ''; ?>
 		
 		<label for="descripcion">Descripción:</label>
-		<textarea name="descripcion"><?=$entrada_actual['descripcion']?></textarea>
+		<textarea name="descripcion" cols="30" rows="5"><?=$entrada_actual['descripcion']?></textarea>
 		<?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'descripcion') : ''; ?>
 		
 		<label for="categoria">Categoría</label>
