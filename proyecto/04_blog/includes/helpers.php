@@ -21,7 +21,7 @@ function borrarErrores(){
     return $borrado;
 }
 
-// Crear menu categorias
+// Listar categorias
 function conseguirCategorias($conexion){
     $sql = "SELECT * FROM categorias ORDER BY nombre ASC";
     $categorias = mysqli_query($conexion, $sql); 
@@ -31,12 +31,29 @@ function conseguirCategorias($conexion){
     }
     return $result;
 }
+// Encontrar una categoria
+function conseguirCategoria($conexion, $id){
+    $sql = "SELECT * FROM categorias WHERE id = $id";
+    $categoria = mysqli_query($conexion, $sql); 
+    $result= array();
+    if ($categoria && mysqli_num_rows($categoria) >=1 ) {
+        $result = mysqli_fetch_assoc($categoria);
+    }
+    return $result;
+}
 // Listar entradas
-function conseguirEntradas($conexion, $limit = null){
-    $sql = "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre,' ',u.apellido) AS 'autor' FROM entradas e 
+function conseguirEntradas($conexion, $limit = null, $categoria = null){
+    $sql = "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre,' ',u.apellido) AS 'autor' 
+            FROM entradas e 
             INNER JOIN categorias c ON e.categorias_id = c.id 
-            INNER JOIN usuarios u ON e.usuario_id = u.id 
-            ORDER BY e.id DESC";
+            INNER JOIN usuarios u ON e.usuario_id = u.id";
+    
+    if(!empty($categoria)){
+        $sql .= " WHERE e.categorias_id = $categoria ";
+	}
+    
+    $sql .= " ORDER BY e.id DESC";
+    
     if($limit){
         // Concatenamiento para un limite de 4 entradas
         $sql .= " LIMIT 4";
@@ -47,5 +64,21 @@ function conseguirEntradas($conexion, $limit = null){
         $resultado = $entradas;
     }
     return $resultado;
+}
+
+function conseguirEntrada($conexion, $id){
+	$sql = "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre, ' ', u.apellido) AS usuario 
+            FROM entradas e 
+		    INNER JOIN categorias c ON e.categorias_id = c.id
+		    INNER JOIN usuarios u ON e.usuario_id = u.id
+            WHERE e.id = $id";   
+	$entrada = mysqli_query($conexion, $sql);
+	
+	$resultado = array();
+	if($entrada && mysqli_num_rows($entrada) >= 1){
+		$resultado = mysqli_fetch_assoc($entrada);
+	}
+	
+	return $resultado;
 }
 ?>

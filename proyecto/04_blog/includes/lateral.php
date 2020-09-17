@@ -7,6 +7,7 @@
                         <a href='crear_entradas.php'class='boton boton-verde'>Crear Entradas</a>
                         <a href='crear_categorias.php'class='boton boton'>Crear Categoria</a>
                         <a href='misdatos.php'class='boton boton-naranja'>Mis Datos</a>
+                        <a href='misentradas.php'class='boton boton-gris'>Mis Entradas</a>
                         <a href='cerrar.php'class='boton boton-rojo'>Logout</a>
                     </div>
                 <?php endif; ?>

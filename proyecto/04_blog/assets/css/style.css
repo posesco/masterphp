@@ -186,7 +186,7 @@ input[type="submit"],
 .boton{
     color:white !important;
     text-align: center;
-    width: 130px;
+    width: 90%;
 }
 
 .boton-naranja{
@@ -201,6 +201,11 @@ input[type="submit"],
 
 .boton-rojo{
     background: red;
+    border-color: #444;
+}
+
+.boton-gris{
+    background: gray;
     border-color: #444;
 }
 

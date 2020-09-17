@@ -13,7 +13,7 @@ require_once 'includes/lateral.php';
             while($entrada = mysqli_fetch_assoc($entradas)):
         ?>
                 <article class="entrada">
-                    <a href=""><h2><?=$entrada['titulo']?></h2></a>
+                    <a href="entrada.php?id=<?=$entrada['id']?>"><h2><?=$entrada['titulo']?></h2></a>
                         <span class="fecha"><?='Autor: '.$entrada['autor'].' | Categoria: '.$entrada['categoria'].' | '.$entrada['fecha']?></span>
                         <p><?=$entrada['descripcion']?></p>
                 </article>
