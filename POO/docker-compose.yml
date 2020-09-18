@@ -14,35 +14,6 @@ services:
     restart: unless-stopped
     networks: 
       - net
-  # Contenedor Base de Datos
-  db:
-    container_name: BASE_DATOS
-    image: mariadb:latest
-    hostname: basedatos.local
-    depends_on: 
-      - php
-    volumes: 
-        - ./server/mariadb/db:/var/lib/mysql 
-    env_file: ./server/.env
-    restart: unless-stopped
-    networks: 
-        - net 
-  # Gestor visual de Base de Datos SOLO POR EL CURSO
-  phpmyadmin:
-    container_name: GESTOR_BASE_DATOS
-    image: phpmyadmin/phpmyadmin:latest
-    hostname: phpmyadmin.local
-    ports:
-      - 8080:80
-    depends_on: 
-      - db
-    volumes: 
-        - ./server/php/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
-        - ./server/php/phpmyadmin/sessions/:/sessions/
-    env_file: ./server/.env
-    restart: unless-stopped
-    networks: 
-        - net 
   #  Servidor Web
   nginx: 
     container_name: NGINX
