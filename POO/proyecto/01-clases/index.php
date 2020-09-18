@@ -1,45 +1,65 @@
 <?php
-// Clase = Molde para crear objetos
+// Programación Orientada a Objetos en PHP (POO)
+
+// Definir una clase (molde para creas más objetos de tipo coche con caracteristicas
+// parecidas)
 class Coche{
-    //Atributos = Propiedades o variables
-    public $color     = 'Rojo';
-    public $marca     = 'Ferrari';
-    public $modelo    = 'Aventor';
-    public $velocidad = 300;
-    public $caballaje = 500;
-    public $plazas    = 2;
-    // Metodo = acciones del objeto 
-    public function getColor(){
-        // Buscar en esta clase la propiedad X
-        return $this->color;
-    }
-    public function setColor($color){
-        $this->color=$color;
-    }
-    public function acelerar(){
-        $this->velocidad++;
-    }
-    public function frenar(){
-        $this->velocidad--;
-    }
-    public function getVelocidad(){
-        return $this->velocidad;
-    }
-}
-// Creacion de objeto o instancia la clase
-$coche  = new Coche();
-$coche1 = new Coche();
-$coche2 = new Coche();
-// Usar el metodo 
-$coche->setColor('Amarrillo');
+	
+	// Atributos o propiedades (variables)
+	public $color = "Rojo";
+	public $marca = "Ferrari";
+	public $modelo = "Aventador";
+	public $velocidad = 300;
+	public $caballaje = 500;
+	public $plazas = 2;
+	
+	// Métodos, son acciones que hace el objeto (antes funciones)
+	public function getColor(){
+		// Busca en esta clase la propiedad X
+		return $this->color;
+	}
+	
+	public function setColor($color){
+		$this->color = $color;
+	}
+	
+	public function setModelo($modelo){
+		$this->modelo = $modelo;
+	}
+	
+	public function acelerar(){
+		$this->velocidad++;
+	}
+	
+	public function frenar(){
+		$this->velocidad--;
+	}
+	
+	public function getVelocidad(){
+		return $this->velocidad;
+	}
+	
+} // fin definicion de la clase
+
+// Crear un objeto / Instanciar la clase
+$coche = new Coche();
+
+// Usar los metodos
+
+$coche->setColor("Amarillo");
+echo "El color del coche es: ".$coche->getColor().'<br>';
+
 $coche->acelerar();
-echo $coche->getColor();
-echo '<hr>';
-echo $coche->getVelocidad();
-echo '<hr>';
-$coche1->setColor('Verde');
-$coche1->frenar();
-echo $coche1->getColor();
-echo '<hr>';
-echo $coche1->getVelocidad();
-?>
+$coche->acelerar();
+$coche->acelerar();
+$coche->acelerar();
+$coche->frenar();
+
+echo "Velocidad de coche: ".$coche->getVelocidad();
+
+$coche2 = new Coche();
+$coche2->setColor("Verde");
+$coche2->setModelo("Gallardo");
+
+var_dump($coche);
+var_dump($coche2);
