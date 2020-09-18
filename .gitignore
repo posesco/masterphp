@@ -1,8 +1,8 @@
 **/.DS_Store
-*/mariadb/db/ib_logfile0
-*/mariadb/db/ibtmp1
-*/mariadb/db/aria_log.00000001
-*/mariadb/db/aria_log_control
-*/mariadb/db/ib_buffer_pool
-*/mariadb/db/ib_logfile0
-*/mariadb/db/ibdata1
+**/ib_logfile0
+**/ibtmp1
+**/aria_log.00000001
+**/aria_log_control
+**/ib_buffer_pool
+**/ib_logfile0
+**/ibdata1
