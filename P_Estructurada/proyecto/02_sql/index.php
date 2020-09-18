@@ -1,1 +1,0 @@
-<?php include 'directorio.php'?>
