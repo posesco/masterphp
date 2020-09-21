@@ -6,9 +6,9 @@ services:
     build:
       context: ./server/php
     volumes:
-      - ./proyecto:/srv/www/api
       - ./server/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./server/php/ini/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./proyecto:/srv/www/api
     env_file: ./server/.env
     restart: unless-stopped
     networks: 
@@ -56,14 +56,6 @@ services:
       - db
     restart: unless-stopped
     networks:
-      - net
-  # Contenedor de composer
-  composer:
-    container_name: COMPOSER
-    build:
-      context: ./server/composer
-    restart: unless-stopped
-    networks: 
       - net
 networks:
   net:
