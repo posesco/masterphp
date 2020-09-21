@@ -1,6 +1,7 @@
 <?php
 
-function autocargar_clases($class){
+function autocargar_clases($class)
+{
 	include 'clases/' . $class . '.php';
 }
 

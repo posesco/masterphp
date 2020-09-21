@@ -1,24 +1,28 @@
 <?php
 
-abstract class Ordenador{
+abstract class Ordenador
+{
 	public $encendido;
-	
+
 	abstract public function encender();
-	
-	public function apagar(){
+
+	public function apagar()
+	{
 		$this->encendido = false;
 	}
-	
 }
 
-class PcAsus extends Ordenador{
+class PcAsus extends Ordenador
+{
 	public $software;
-	
-	public function arrancarSoftware(){
+
+	public function arrancarSoftware()
+	{
 		$this->software = true;
 	}
-	
-	public function encender() {
+
+	public function encender()
+	{
 		$this->encendido = true;
 	}
 }

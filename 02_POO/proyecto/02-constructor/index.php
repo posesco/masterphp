@@ -8,8 +8,9 @@ $coche3 = new Coche("Rojo", "Mercedes", "Clase A", 350, 100, 3);
 
 $coche->color = "ROSA";
 $coche->setMarca("Audi");
+$string = 'Hola a todos';
 
-echo $coche->mostrarInformacion("HOLA MUNDO DESDE UN METODO");
+echo $coche->mostrarInformacion($coche1);
 
 
 //var_dump($coche->getModelo());

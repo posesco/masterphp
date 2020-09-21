@@ -1,6 +1,5 @@
 <?php
 require_once 'autoload.php';
-
 /*
 $usuario = new Usuario();
 echo $usuario->nombre;
@@ -18,47 +17,53 @@ use MisClases\Categoria;
 use MisClases\Entrada;
 use PanelAdministrador\Usuario as UsuarioAdmin;
 
-class Principal{
+
+class Principal
+{
 	public $usuario;
 	public $categoria;
 	public $entrada;
-	
-	public function __construct() {
+
+	public function __construct()
+	{
 		$this->usuario = new Usuario();
 		$this->categoria = new Categoria();
 		$this->entrada = new Entrada();
 	}
-	
-	function getUsuario() {
+
+	function getUsuario()
+	{
 		return $this->usuario;
 	}
 
-	function getCategoria() {
+	function getCategoria()
+	{
 		return $this->categoria;
 	}
 
-	function getEntrada() {
+	function getEntrada()
+	{
 		return $this->entrada;
 	}
 
-	function setUsuario($usuario) {
+	function setUsuario($usuario)
+	{
 		$this->usuario = $usuario;
 	}
 
-	function setCategoria($categoria) {
+	function setCategoria($categoria)
+	{
 		$this->categoria = $categoria;
 	}
 
-	function setEntrada($entrada) {
+	function setEntrada($entrada)
+	{
 		$this->entrada = $entrada;
 	}
-
-	
 }
 
 // Objeto principal
 $principal = new Principal();
-
 //var_dump($principal->usuario);
 $metodos = get_class_methods($principal);
 
@@ -70,10 +75,9 @@ $usuario = new UsuarioAdmin();
 $usuario->informacion();
 
 // Comprobar si existe una clase
-$clase = @class_exists('PanelAdministrador\Usuari2o');
-if($clase){
+$clase = @class_exists('PanelAdministrador\Usuario');
+if ($clase) {
 	echo "<h1>La clase SI existe</h1>";
-}else{
+} else {
 	echo "<h1>La clase NO existe</h1>";
 }
-

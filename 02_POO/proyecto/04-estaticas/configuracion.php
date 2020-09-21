@@ -1,33 +1,39 @@
 <?php
 
-class Configuracion{
-	
+class Configuracion
+{
+
 	public static $color;
 	public static $newsletter;
 	public static $entorno;
-	
-	public static function getColor() {
+
+	public static function getColor()
+	{
 		return self::$color;
 	}
 
-	public static function getNewsletter() {
+	public static function getNewsletter()
+	{
 		return self::$newsletter;
 	}
 
-	public static function getEntorno() {
+	public static function getEntorno()
+	{
 		return self::$entorno;
 	}
 
-	public static function setColor($color) {
+	public static function setColor($color)
+	{
 		self::$color = $color;
 	}
 
-	public static function setNewsletter($newsletter) {
+	public static function setNewsletter($newsletter)
+	{
 		self::$newsletter = $newsletter;
 	}
 
-	public static function setEntorno($entorno) {
+	public static function setEntorno($entorno)
+	{
 		self::$entorno = $entorno;
 	}
-
 }

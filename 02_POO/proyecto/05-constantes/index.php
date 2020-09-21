@@ -1,28 +1,35 @@
 <?php
 
-class Usuario{
-	
+class Usuario
+{
+
 	const URL_COMPLETA = "http://localhost";
 	public $email;
 	public $password;
-	
-	function getEmail() {
+
+	function getEmail()
+	{
 		return $this->email;
 	}
 
-	function getPassword() {
+	function getPassword()
+	{
 		return $this->password;
 	}
 
-	function setEmail($email) {
+	function setEmail($email)
+	{
 		$this->email = $email;
 	}
 
-	function setPassword($password) {
+	function setPassword($password)
+	{
 		$this->password = $password;
 	}
-
 }
 
 echo Usuario::URL_COMPLETA;
-
+echo '<hr>';
+$user = new Usuario();
+$user->setEmail('jesus.posada@gmail.com');
+echo $user->getEmail();

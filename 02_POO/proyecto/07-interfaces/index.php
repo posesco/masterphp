@@ -1,6 +1,7 @@
 <?php
 
-interface Ordenador{
+interface Ordenador
+{
 	public function encender();
 	public function apagar();
 	public function reiniciar();
@@ -8,34 +9,42 @@ interface Ordenador{
 	public function detectarUSB();
 }
 
-class iMac implements Ordenador{
+class iMac implements Ordenador
+{
 	private $modelo;
-	
-	function getModelo() {
+
+	function getModelo()
+	{
 		return $this->modelo;
 	}
 
-	function setModelo($modelo) {
+	function setModelo($modelo)
+	{
 		$this->modelo = $modelo;
 	}
-	
-	public function encender() {
+
+	public function encender()
+	{
 		return "LO QUE SEA";
 	}
 
-	public function apagar() {
+	public function apagar()
+	{
 		return "LO QUE SEA";
 	}
-	
-	public function reiniciar() {
+
+	public function reiniciar()
+	{
 		return "LO QUE SEA";
 	}
-	
-	public function desfragmentar() {
+
+	public function desfragmentar()
+	{
 		return "LO QUE SEA";
 	}
-	
-	public function detectarUSB() {
+
+	public function detectarUSB()
+	{
 		return "LO QUE SEA";
 	}
 }
