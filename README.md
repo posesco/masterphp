@@ -7,6 +7,13 @@
 
 3. MVC(Modelo Vista Controlado)
 
+4. Librerias PHP
+    * Se crea contenedor efimero para composer php(multistage dockerfile)
+    * HTML2PDF
+    * Zebra_pagination
+    * Phpthumb
+    * Firephp-core
+
 4. FrameWorks
     * Laravel
     * Symfony
