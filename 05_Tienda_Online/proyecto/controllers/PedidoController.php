@@ -1,11 +1,11 @@
 <?php
-require_once 'models/pedido.php';
+require_once '../models/pedido.php';
 
 class pedidoController{
 	
 	public function hacer(){
 		
-		require_once 'views/pedido/hacer.php';
+		require_once '../views/pedido/hacer.php';
 	}
 	
 	public function add(){
@@ -42,7 +42,7 @@ class pedidoController{
 				$_SESSION['pedido'] = "failed";
 			}
 			
-			header("Location:".base_url.'pedido/confirmado');			
+			header("Location:".base_url.'views/pedido/confirmado');			
 		}else{
 			// Redigir al index
 			header("Location:".base_url);
@@ -60,7 +60,7 @@ class pedidoController{
 			$pedido_productos = new Pedido();
 			$productos = $pedido_productos->getProductosByPedido($pedido->id);
 		}
-		require_once 'views/pedido/confirmado.php';
+		require_once '../views/pedido/confirmado.php';
 	}
 	
 	public function mis_pedidos(){
@@ -72,7 +72,7 @@ class pedidoController{
 		$pedido->setUsuario_id($usuario_id);
 		$pedidos = $pedido->getAllByUser();
 		
-		require_once 'views/pedido/mis_pedidos.php';
+		require_once '../views/pedido/mis_pedidos.php';
 	}
 	
 	public function detalle(){
@@ -90,9 +90,9 @@ class pedidoController{
 			$pedido_productos = new Pedido();
 			$productos = $pedido_productos->getProductosByPedido($id);
 			
-			require_once 'views/pedido/detalle.php';
+			require_once '../views/pedido/detalle.php';
 		}else{
-			header('Location:'.base_url.'pedido/mis_pedidos');
+			header('Location:'.base_url.'views/pedido/mis_pedidos');
 		}
 	}
 	
@@ -103,7 +103,7 @@ class pedidoController{
 		$pedido = new Pedido();
 		$pedidos = $pedido->getAll();
 		
-		require_once 'views/pedido/mis_pedidos.php';
+		require_once '../views/pedido/mis_pedidos.php';
 	}
 	
 	public function estado(){
@@ -119,7 +119,7 @@ class pedidoController{
 			$pedido->setEstado($estado);
 			$pedido->edit();
 			
-			header("Location:".base_url.'pedido/detalle&id='.$id);
+			header("Location:".base_url.'views/pedido/detalle&id='.$id);
 		}else{
 			header("Location:".base_url);
 		}

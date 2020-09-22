@@ -1,5 +1,5 @@
 <?php
-require_once 'models/usuario.php';
+require_once '../models/usuario.php';
 
 class usuarioController{
 	
@@ -8,7 +8,7 @@ class usuarioController{
 	}
 	
 	public function registro(){
-		require_once 'views/usuario/registro.php';
+		require_once '../views/usuario/registro.php';
 	}
 	
 	public function save(){
@@ -38,7 +38,7 @@ class usuarioController{
 		}else{
 			$_SESSION['register'] = "failed";
 		}
-		header("Location:".base_url.'usuario/registro');
+		header("Location:".base_url.'views/usuario/registro');
 	}
 	
 	public function login(){

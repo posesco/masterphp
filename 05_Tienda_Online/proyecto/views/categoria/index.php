@@ -1,6 +1,6 @@
 <h1>Gestionar categorias</h1>
 
-<a href="<?=base_url?>categoria/crear" class="button button-small">
+<a href="<?=base_url?>views/categoria/crear" class="button button-small">
 	Crear categoria
 </a>
 

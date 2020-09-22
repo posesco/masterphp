@@ -1,5 +1,5 @@
 <?php
-require_once 'models/producto.php';
+require_once '../models/producto.php';
 
 class productoController{
 	
@@ -8,7 +8,7 @@ class productoController{
 		$productos = $producto->getRandom(6);
 	
 		// renderizar vista
-		require_once 'views/producto/destacados.php';
+		require_once '../views/producto/destacados.php';
 	}
 	
 	public function ver(){
@@ -21,7 +21,7 @@ class productoController{
 			$product = $producto->getOne();
 			
 		}
-		require_once 'views/producto/ver.php';
+		require_once '../views/producto/ver.php';
 	}
 	
 	public function gestion(){
@@ -30,12 +30,12 @@ class productoController{
 		$producto = new Producto();
 		$productos = $producto->getAll();
 		
-		require_once 'views/producto/gestion.php';
+		require_once '../views/producto/gestion.php';
 	}
 	
 	public function crear(){
 		Utils::isAdmin();
-		require_once 'views/producto/crear.php';
+		require_once '../views/producto/crear.php';
 	}
 	
 	public function save(){
@@ -93,7 +93,7 @@ class productoController{
 		}else{
 			$_SESSION['producto'] = "failed";
 		}
-		header('Location:'.base_url.'producto/gestion');
+		header('Location:'.base_url.'views/producto/gestion');
 	}
 	
 	public function editar(){
@@ -107,10 +107,10 @@ class productoController{
 			
 			$pro = $producto->getOne();
 			
-			require_once 'views/producto/crear.php';
+			require_once '../views/producto/crear.php';
 			
 		}else{
-			header('Location:'.base_url.'producto/gestion');
+			header('Location:'.base_url.'views/producto/gestion');
 		}
 	}
 	
@@ -132,7 +132,7 @@ class productoController{
 			$_SESSION['delete'] = 'failed';
 		}
 		
-		header('Location:'.base_url.'producto/gestion');
+		header('Location:'.base_url.'views/producto/gestion');
 	}
 	
 }

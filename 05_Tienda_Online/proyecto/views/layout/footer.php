@@ -3,7 +3,7 @@
 
 			<!-- PIE DE PÁGINA -->
 			<footer id="footer">
-				<p>Desarrollado por Víctor Robles WEB &copy; <?= date('Y') ?></p>
+				<p>Curso Master PHP Udemy &copy; <?= date('Y') ?></p>
 			</footer>
 		</div>
 	</body>

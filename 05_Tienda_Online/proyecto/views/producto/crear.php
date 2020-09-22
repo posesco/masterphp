@@ -1,10 +1,10 @@
 <?php if(isset($edit) && isset($pro) && is_object($pro)): ?>
 	<h1>Editar producto <?=$pro->nombre?></h1>
-	<?php $url_action = base_url."producto/save&id=".$pro->id; ?>
+	<?php $url_action = base_url."views/producto/save&id=".$pro->id; ?>
 	
 <?php else: ?>
 	<h1>Crear nuevo producto</h1>
-	<?php $url_action = base_url."producto/save"; ?>
+	<?php $url_action = base_url."views/producto/save"; ?>
 <?php endif; ?>
 	
 <div class="form_container">

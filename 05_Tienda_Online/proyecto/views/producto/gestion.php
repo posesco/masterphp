@@ -1,6 +1,6 @@
 <h1>Gestión de productos</h1>
 
-<a href="<?=base_url?>producto/crear" class="button button-small">
+<a href="<?=base_url?>views/producto/crear" class="button button-small">
 	Crear producto
 </a>
 
@@ -33,8 +33,8 @@
 			<td><?=$pro->precio;?></td>
 			<td><?=$pro->stock;?></td>
 			<td>
-				<a href="<?=base_url?>producto/editar&id=<?=$pro->id?>" class="button button-gestion">Editar</a>
-				<a href="<?=base_url?>producto/eliminar&id=<?=$pro->id?>" class="button button-gestion button-red">Eliminar</a>
+				<a href="<?=base_url?>views/producto/editar&id=<?=$pro->id?>" class="button button-gestion">Editar</a>
+				<a href="<?=base_url?>views/producto/eliminar&id=<?=$pro->id?>" class="button button-gestion button-red">Eliminar</a>
 			</td>
 		</tr>
 	<?php endwhile; ?>
