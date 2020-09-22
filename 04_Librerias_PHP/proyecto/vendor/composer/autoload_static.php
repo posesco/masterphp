@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbb2779d0f899ea35cc919a708dd851ea
+class ComposerStaticInitef4c93e8e9ae83ab72a9d2ed8babb634
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -35,14 +35,15 @@ class ComposerStaticInitbb2779d0f899ea35cc919a708dd851ea
         'TCPDF_IMPORT' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_import.php',
         'TCPDF_PARSER' => __DIR__ . '/..' . '/tecnickcom/tcpdf/tcpdf_parser.php',
         'TCPDF_STATIC' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/tcpdf_static.php',
+        'Zebra_Pagination' => __DIR__ . '/..' . '/stefangabos/zebra_pagination/Zebra_Pagination.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbb2779d0f899ea35cc919a708dd851ea::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbb2779d0f899ea35cc919a708dd851ea::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbb2779d0f899ea35cc919a708dd851ea::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitef4c93e8e9ae83ab72a9d2ed8babb634::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitef4c93e8e9ae83ab72a9d2ed8babb634::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitef4c93e8e9ae83ab72a9d2ed8babb634::$classMap;
 
         }, null, ClassLoader::class);
     }
