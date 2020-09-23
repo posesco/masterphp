@@ -1,7 +1,6 @@
 # Contenedor efimero para traer libreria con composer php
 FROM composer:latest as librerias
-RUN composer create-project laravel/laravel
-
+RUN composer create-project --prefer-dist laravel/laravel blog "5.8.*"  
 # Contenedor final con solo librerias importadas
 FROM php:7.4-fpm-alpine
 WORKDIR /srv/www/api/
