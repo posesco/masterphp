@@ -1,2 +1,2 @@
-#!bin/bash
-cp -Rf /tmp/* /srv/www/api
+#!/bin/bash
+cp -Rf /tmp/laravel /srv/www/api
