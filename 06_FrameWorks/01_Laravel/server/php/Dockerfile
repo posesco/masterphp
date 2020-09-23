@@ -4,5 +4,9 @@ RUN composer create-project laravel/laravel
 
 # Contenedor final con solo librerias importadas
 FROM php:7.4-fpm-alpine
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
-COPY --from=librerias /app/laravel/* /srv/www/api
+WORKDIR /srv/www/api/
+RUN docker-php-ext-install bcmath mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
+COPY --from=librerias /app /tmp
+COPY copiador.sh /tmp
+RUN sh /tmp/copiador.sh
+CMD ["php-fpm"]
