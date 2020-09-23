@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about/{id}', function ($id) {
-    return "Hola mundo ID: {$id}";
+Route::prefix('admin')->group(function () {
+    Route::get('/hola', function () {
+        // dd(['name'=>'Jesus Posada']);
+        return 'Hola Mundo desde Laravel';
+    });
 });
